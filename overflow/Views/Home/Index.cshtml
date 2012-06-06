@@ -12,11 +12,11 @@
     <section id="userInput">
         <div>
             <label for="userName" id="logInPrompt">Your name:</label>
-            <input id="userName" type="text"/>
+            <input id="userName" type="text" data-bind="value: userName"/>
             <a id="logIn">That's me!</a>
         </div>
         <div>
-            <label for="newQuestion" id="questionPrompt">Dennis wants to know...</label>
+            <label for="newQuestion" id="questionPrompt"><span data-bind="text: userName"></span> wants to know...</label>
             <textarea cols=20 rows=2 id="newQuestion" name="newQuestion"></textarea>
             <a id='addItem'>Ask now!</a>
         </div>
@@ -36,3 +36,7 @@
     </ul>
     <footer><div></div></footer>
 </div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/overflow");
+}
