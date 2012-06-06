@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "overflow", "overflow\overflow.csproj", "{2D7C0C51-313A-48D1-9D29-77A158EA03EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D7C0C51-313A-48D1-9D29-77A158EA03EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7C0C51-313A-48D1-9D29-77A158EA03EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7C0C51-313A-48D1-9D29-77A158EA03EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7C0C51-313A-48D1-9D29-77A158EA03EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

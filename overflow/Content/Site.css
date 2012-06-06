@@ -1,0 +1,219 @@
+﻿html
+{
+    height: 100%;
+}
+
+body
+{
+    background: #182128;
+    color: #FEE;
+    margin: 0; padding: 0;
+    height: 100%;
+    font-family: 'Varela Round', helvetica, verdana, sans-serif;
+}
+
+a
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#content
+{
+    position: relative;
+    min-height: 100%;
+    width: 80%; min-width: 400px;
+    margin: 0 auto;
+}
+
+h1
+{
+    background-image: url("images/signalRoverflow_left.png");
+    text-indent: -1000px;
+    width: 400px; height: 154px;
+    margin: 0; padding: 0;
+}
+
+@media all and (min-width: 900px)
+{
+    #rightBanner
+    {
+        background-image: url("images/signalRoverflow_right.png");
+        width: 404px;
+        height: 145px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+#userInput
+{
+    margin: 40px auto 0 auto;
+}
+
+#logInPrompt
+{
+    margin-bottom: 10px;
+    padding: 8px 5px 0 0;
+}
+
+#logIn
+{
+    display: inline-block;
+    background-color: #FE9800;
+    color: #182128;
+    font-weight: bold; font-size: 14px;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-family: verdana,tahoma,sans-serif;
+}
+
+#logIn:hover
+{
+    box-shadow: 0 0 2px 2px #FFAA55;
+}
+
+#userName
+{
+    border: 2px solid #26221b;
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 5px;
+    width: 300px;
+    margin-right: 20px;
+}
+
+#userName:focus
+{
+    outline: none;
+    border-color: #FE9800;
+    box-shadow: 0 0 7px #FE9800;
+}
+
+#questionPrompt
+{
+    margin-bottom: 10px;
+    padding-top: 5px;
+    display: block;
+}
+
+#newQuestion
+{
+    display: block;
+    height: 100px;
+    width: 100%;
+    resize: none;
+    padding: 3px 5px;
+    border: 0;
+    box-sizing: border-box;
+}
+
+#newQuestion:focus
+{
+    outline: none;
+    border-color: #FE9800;
+    box-shadow: 0 0 7px #FE9800;
+}
+
+#addItem
+{
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    background-color: #FE9800;
+    color: #182128;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 12px;
+    font-family: verdana, tahoma, sans-serif;
+}
+
+#addItem:hover
+{
+    box-shadow: 0 0 2px 2px #FFAA55;
+}
+
+#questions
+{
+    margin: 0 auto;
+    padding: 60px 0 0 0;
+    list-style: none;
+    /*color: white;*/
+}
+
+.question
+{
+    overflow: hidden;
+    padding: 10px 0 15px 0;
+    border-top: 1px dotted #594C38;
+}
+
+.questionStatus
+{
+    float: left;
+    width: 90px;
+}
+
+.votecount
+{
+    font-size: 26pt;
+    text-align: center;
+    margin: 5px;
+}
+
+.vote
+{
+    width: 40px;
+    height: 24px;
+    margin: 0 auto;
+    display: block;
+}
+.voteup
+{
+    background-image: url("images/unselected_up.png");
+}
+
+.voteup.selected
+{
+    background-image: url("images/selected_up.png");
+}
+
+.votedown
+{
+    background-image: url("images/unselected_down.png");
+}
+
+.votedown.selected
+{
+    background-image: url("images/selected_down.png");
+}
+
+.questionText
+{
+    max-width: 785px;
+    font-size: 13pt;
+    letter-spacing: 0.07em;
+}
+
+.questionAuthor
+{
+    font-size: 11pt;
+}
+
+
+
+@media all and (min-width: 900px) and (min-height: 550px)
+{
+    footer div
+    {
+        background-image: url("/content/images/signalRoverflow_rightbottom.png");
+        width: 408px;
+        height: 159px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }
+}

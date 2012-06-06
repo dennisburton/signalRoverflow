@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "signalRoverflow";
+}
+
+<div id="content">
+    <header>
+        <hgroup>
+            <h1>signalRoverflow</h1>
+            <div id="rightBanner"></div>
+        </hgroup>
+    </header>
+    <section id="userInput">
+        <div>
+            <label for="userName" id="logInPrompt">Your name:</label>
+            <input id="userName" type="text"/>
+            <a id="logIn">That's me!</a>
+        </div>
+        <div>
+            <label for="newQuestion" id="questionPrompt">Dennis wants to know...</label>
+            <textarea cols=20 rows=2 id="newQuestion" name="newQuestion"></textarea>
+            <a id='addItem'>Ask now!</a>
+        </div>
+    </section>
+    <ul id="questions">
+        <li class=question>
+            <div class=questionStatus>
+                <a class="vote voteup selected"></a>
+                <div class=votecount>42</div>
+                <a class="vote votedown"></a>
+            </div>
+            <div class=questionText>
+                <p>How awesome is the new Azure portal?</p>
+                <div class="questionAuthor">From: dburton</div>
+            </div>
+        </li>
+    </ul>
+    <footer><div></div></footer>
+</div>
