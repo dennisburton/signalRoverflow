@@ -10,12 +10,12 @@
         </hgroup>
     </header>
     <section id="userInput">
-        <div>
+        <div data-bind="visible: !isLoggedIn()">
             <label for="userName" id="logInPrompt">Your name:</label>
             <input id="userName" type="text" data-bind="value: userName"/>
-            <a id="logIn">That's me!</a>
+            <a id="logIn" data-bind="click: loginUser">That's me!</a>
         </div>
-        <div>
+        <div data-bind="visible: isLoggedIn()">
             <label for="newQuestion" id="questionPrompt"><span data-bind="text: userName"></span> wants to know...</label>
             <textarea cols=20 rows=2 id="newQuestion" name="newQuestion"></textarea>
             <a id='addItem'>Ask now!</a>
