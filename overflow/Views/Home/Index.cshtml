@@ -17,20 +17,20 @@
         </div>
         <div data-bind="visible: isLoggedIn()">
             <label for="newQuestion" id="questionPrompt"><span data-bind="text: userName"></span> wants to know...</label>
-            <textarea cols=20 rows=2 id="newQuestion" name="newQuestion"></textarea>
-            <a id='addItem'>Ask now!</a>
+            <textarea cols=20 rows=2 id="newQuestion" name="newQuestion" data-bind="value: newQuestionText"></textarea>
+            <a id='addItem' data-bind="click: addQuestion">Ask now!</a>
         </div>
     </section>
-    <ul id="questions">
+    <ul id="questions" data-bind="foreach: questions">
         <li class=question>
             <div class=questionStatus>
-                <a class="vote voteup selected"></a>
-                <div class=votecount>42</div>
-                <a class="vote votedown"></a>
+                <a class="vote voteup selected" data-bind="click: voteUp"></a>
+                <div class=votecount data-bind="text: voteCount"></div>
+                <a class="vote votedown" data-bind="click: voteDown"></a>
             </div>
             <div class=questionText>
-                <p>How awesome is the new Azure portal?</p>
-                <div class="questionAuthor">From: dburton</div>
+                <p data-bind="text: content"></p>
+                <div class="questionAuthor">From: <span data-bind="text: author"></span></div>
             </div>
         </li>
     </ul>
