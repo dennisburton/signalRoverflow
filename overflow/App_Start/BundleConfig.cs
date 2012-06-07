@@ -16,8 +16,10 @@ namespace overflow
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/overflow").Include(
+                "~/Scripts/underscore.js",
                 "~/Scripts/namespaces.js",
                 "~/Scripts/OverflowViewModel.js",
+                "~/Scripts/overflowhub.js",
                 "~/Scripts/overflow.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));

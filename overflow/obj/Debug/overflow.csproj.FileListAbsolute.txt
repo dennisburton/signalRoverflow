@@ -31,4 +31,10 @@ C:\Development\overflow\overflow\bin\System.Web.WebPages.Deployment.xml
 C:\Development\overflow\overflow\bin\System.Web.WebPages.Razor.xml
 C:\Development\overflow\overflow\obj\Debug\overflow.dll
 C:\Development\overflow\overflow\obj\Debug\overflow.pdb
+C:\Development\overflow\overflow\bin\SignalR.dll
+C:\Development\overflow\overflow\bin\SignalR.Hosting.AspNet.dll
+C:\Development\overflow\overflow\bin\SignalR.Hosting.Common.dll
+C:\Development\overflow\overflow\bin\SignalR.xml
+C:\Development\overflow\overflow\bin\SignalR.Hosting.AspNet.xml
+C:\Development\overflow\overflow\bin\SignalR.Hosting.Common.xml
 C:\Development\overflow\overflow\obj\Debug\overflow.csprojResolveAssemblyReference.cache

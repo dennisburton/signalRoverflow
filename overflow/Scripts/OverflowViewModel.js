@@ -17,15 +17,26 @@ overflow.OverflowViewModel = function () {
         var questionVM = new overflow.QuestionViewModel(questionData);
         self.questions.push(questionVM);
         self.newQuestionText("");
+
+        $.connection.questionHub.addQuestion(questionVM.id, questionVM.content, questionVM.author);
     }
 }
 
 overflow.QuestionViewModel = function (questionData) {
     var self = this;
 
+    self.id = questionData.id || overflow.newGuid();
     self.content = questionData.content;
     self.author = questionData.author;
     self.votes = ko.observableArray([]);
+
+    if (questionData.votes) {
+        _(questionData.votes).each(function (voteData) {
+            var voteVM = new overflow.VoteViewModel(voteData);
+            self.votes.push(voteVM);
+        });
+    }
+
 
     self.addVote = function (voteType, voter) {
         var userVotes = self.userVotes(voter);
@@ -41,6 +52,7 @@ overflow.QuestionViewModel = function (questionData) {
             var voteVM = new overflow.VoteViewModel(voteData);
             self.votes.push(voteVM);
         }
+        $.connection.questionHub.addVote(self.id, voteType, voter);
     }
 
     self.voteUp = function () {
