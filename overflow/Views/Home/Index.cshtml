@@ -24,9 +24,9 @@
     <ul id="questions" data-bind="foreach: questions">
         <li class=question>
             <div class=questionStatus>
-                <a class="vote voteup selected" data-bind="click: voteUp"></a>
+                <a class="vote voteup" data-bind="click: voteUp, css: {selected: didUserVoteUp}"></a>
                 <div class=votecount data-bind="text: voteCount"></div>
-                <a class="vote votedown" data-bind="click: voteDown"></a>
+                <a class="vote votedown" data-bind="click: voteDown, css: {selected: didUserVoteDown}"></a>
             </div>
             <div class=questionText>
                 <p data-bind="text: content"></p>

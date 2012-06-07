@@ -27,16 +27,28 @@ overflow.QuestionViewModel = function (questionData) {
     self.author = questionData.author;
     self.votes = ko.observableArray([]);
 
+    self.addVote = function (voteType, voter) {
+        var userVotes = self.userVotes(voter);
+        if (userVotes.length > 0) {
+            var userVote = userVotes[0];
+            if (userVote.voteType !== voteType) {
+                self.votes.remove(function (currentVote) {
+                    return currentVote.voteType !== voteType;
+                });
+            }
+        } else {
+            var voteData = { voteType: voteType, voter: voter };
+            var voteVM = new overflow.VoteViewModel(voteData);
+            self.votes.push(voteVM);
+        }
+    }
+
     self.voteUp = function () {
-        var voteData = { voteType: overflow.voteUp, voter: overflowViewModel.userName() };
-        var voteVM = new overflow.VoteViewModel(voteData);
-        self.votes.push(voteVM);
+        self.addVote(overflow.voteUp, overflowViewModel.userName());
     }
 
     self.voteDown = function () {
-        var voteData = { voteType: overflow.voteDown, voter: overflowViewModel.userName() };
-        var voteVM = new overflow.VoteViewModel(voteData);
-        self.votes.push(voteVM);
+        self.addVote(overflow.voteDown, overflowViewModel.userName());
     }
 
     self.votesOfType = function (votes, voteType) {
@@ -50,6 +62,29 @@ overflow.QuestionViewModel = function (questionData) {
         var upVotes = self.votesOfType(self.votes(), overflow.voteUp);
         var downVotes = self.votesOfType(self.votes(), overflow.voteDown);
         return upVotes.length - downVotes.length;
+    });
+
+    self.userVotes = function (userName) {
+        var userVotes = ko.utils.arrayFilter(self.votes(), function (currentVote) {
+            return currentVote.voter === userName;
+        });
+        return userVotes;
+    }
+
+    self.userVotesOfType = function (userName, voteType) {
+        var userVotes = self.userVotes(userName);
+        var typeVotes = self.votesOfType(userVotes, voteType);
+        return typeVotes;
+    }
+
+    self.didUserVoteUp = ko.computed(function () {
+        var upVotes = self.userVotesOfType(overflowViewModel.userName(), overflow.voteUp);
+        return upVotes.length > 0;
+    });
+
+    self.didUserVoteDown = ko.computed(function () {
+        var downVotes = self.userVotesOfType(overflowViewModel.userName(), overflow.voteDown);
+        return downVotes.length > 0;
     });
 
 }
